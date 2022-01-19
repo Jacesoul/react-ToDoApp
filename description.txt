@@ -1,0 +1,6 @@
+### ToDoApp
+- react-hook-form은 리엑트에서 form으로 작업하기에 가장 좋은 방법이다. 
+- npm install react-hook-form
+- register함수의 객체는 input에 필요한 onBlur, onChange, ref, name이 있다. 
+- {...register("toDo")}는 register 함수가 반환하는 객체를 가져다가 input에 props로 주는것이다.
+- watch함수는 form의 입력값들의 변화를 관찰할수 있게 해주는 함수이다. 
