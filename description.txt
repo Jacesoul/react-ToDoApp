@@ -4,3 +4,7 @@
 - register함수의 객체는 input에 필요한 onBlur, onChange, ref, name이 있다. 
 - {...register("toDo")}는 register 함수가 반환하는 객체를 가져다가 input에 props로 주는것이다.
 - watch함수는 form의 입력값들의 변화를 관찰할수 있게 해주는 함수이다. 
+- handleSubmit은 validation을 담당하게 된다.
+- handleSubmit은 2개의 인자를 받을수 있는데 하나는 데이터가 유효할때 호출되는 함수이다. 다른 하나는 데이터가 유효하지 않을때 호출되는 함수이다.
+- 유저가 실제로 submit을 하면 handleSubmit은 해야하는 모든 validation이나, 다른 일들을 전부 끝마친후에 데이터가 유효할때만 함수를 호출한다.
+- register안에 required를 설정하는 이유는 HTML에서 required를 설정할수 있지만 누군가 소스코드를 수정할수 있기 때문에 코드를 보호하기 위해 register에 넣는다.
