@@ -1,40 +1,32 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-/*
+interface IForm {
+  toDo: string;
+}
+
 function ToDoList() {
-  const [toDo, setToDo] = useState("");
-  const [toDoError, setToDoError] = useState("");
-  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
-    const {
-      currentTarget: { value },
-    } = event;
-    setToDo(value);
-    setToDoError("");
-  };
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log(toDo);
-    if (toDo.length < 10) {
-      return setToDoError("To do should be longer");
-    }
+  const { register, handleSubmit, setValue } = useForm<IForm>();
+  const onSubmit = (data: IForm) => {
+    console.log("add to do", data.toDo);
+    setValue("toDo", "");
   };
   return (
     <div>
-    <form onSubmit={onSubmit}>
-    <input
-    onChange={onChange}
-    value={toDo}
-    placeholder="Write a to do"
-    ></input>
-    <button>Add ToDo</button>
-    {toDoError !== "" ? toDoError : null}
-    </form>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          {...register("toDo", { required: "Please write a To Do" })}
+          placeholder="Write a to do"
+        ></input>
+        <button>Add ToDo</button>
+      </form>
     </div>
-    );
-  }
-  */
+  );
+}
 
+export default ToDoList;
+
+/*
 interface IForm {
   Email: string;
   firstName: string;
@@ -133,5 +125,4 @@ function ToDoList() {
     </div>
   );
 }
-
-export default ToDoList;
+*/
