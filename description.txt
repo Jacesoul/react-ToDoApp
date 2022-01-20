@@ -1,4 +1,4 @@
-### ToDoApp
+### React-hook-form
 - react-hook-form은 리엑트에서 form으로 작업하기에 가장 좋은 방법이다. 
 - npm install react-hook-form
 - register함수의 객체는 input에 필요한 onBlur, onChange, ref, name이 있다. 
@@ -9,3 +9,11 @@
 - 유저가 실제로 submit을 하면 handleSubmit은 해야하는 모든 validation이나, 다른 일들을 전부 끝마친후에 데이터가 유효할때만 함수를 호출한다.
 - register안에 required를 설정하는 이유는 HTML에서 required를 설정할수 있지만 누군가 소스코드를 수정할수 있기 때문에 코드를 보호하기 위해 register에 넣는다.
 - setError는 특정한 에러를 발생시키게 해준다.
+
+### Selector
+- Selectors는 derived state를 나타냅니다.
+- derived state란, state를 입력받아서 그걸 변형해 반환하는 순수함수를 거쳐 반환된 값을 말합니다.
+- Selectors는 state를 가지고 다른 state로 만들수있다. state를 원하는대로 변형할수있다.
+- 즉 Selectors는 atom의 output을 변형시키는 도구이다. ToDoApp에서 atom은 그냥 배열이다.
+- 현재 toDoState에 모든 toDo들을 담고 있는데 Selectors를 이용해서 toDo들을 분리해야한다.   
+- Selectors 함수에서 get function이 있어야 atom을 받을수가있다.
